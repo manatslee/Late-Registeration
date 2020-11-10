@@ -1,92 +1,188 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-  <% include ../partials/header.ejs %>
-</head>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ยื่นคำร้องลงทะเบียนล่าช้า</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Mitr,TH SarabunPSK,Angsana New, serif;
+}
+
+/* Style the header */
+header {
+  background-color: #ff0000d8;
+  padding: 5px;
+  text-align: left;
+  font-size: 18px;
+  color: white;
+}
+
+p.ex1 {
+  font-size: 13px;
+  text-align: right;
+}
+p.ex2 {
+  color: #cc7a00;
+}
+h5.ex1{
+  color: #cc7a00;
+}
+h3.ex1{
+  text-align: center;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+  background: #ffcc33;
+  color: #996600;
+  
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ffcc33;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #ff0000;
+  padding: 5px;
+  text-align: right;
+  color: white;
+  font-size: 15px;
+  
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
 <body>
 
-  <% include ../partials/nav.ejs %>
+<header>
+    <IMG ALIGN=left BORDER=2 HEIGHT=90 WIDTH=415 HSPACE=20 VSPACE=10 SRC="../Tulogow.png">
+  <h1>&nbsp</h1>
+  <h1>&nbsp</h1>
+</header>
 
-<div class="jumbotron text-center">
-  <div class="container">
-    <a href="/" class="lang-logo">
-      <img src="/lang-logo.png">
-    </a>
-    <h1>Hello Songsakdi</h1>
-    <h2>คุณกำลังแก้โค้ดและเอาขึ้น Heroku.com</h2>
-  </div>
-</div>
-<div class="container-fluid">
-<table class="table table-hover table-bordered">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div class="container">
-  <div class="alert alert-info text-center" role="alert">
-    To deploy your own copy, and learn the fundamentals of the Heroku platform, head over to the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs" class="alert-link">Getting Started on Heroku with Node.js</a> tutorial.
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-info-sign"></span> How this sample app works</h3>
-      <ul>
-        <li>This app was deployed to Heroku, either using Git or by using <a href="https://github.com/heroku/node-js-getting-started">Heroku Button</a> on the repository.</li>
-
-        <li>When Heroku received the source code, it fetched all the dependencies in the <a href="https://github.com/heroku/node-js-getting-started/blob/main/package.json">package.json</a>, creating a deployable slug.</li>
-        <li>The platform then spins up a dyno, a lightweight container that provides an isolated environment in which the slug can be mounted and executed.</li>
-        <li>You can scale your app, manage it, and deploy over <a href="https://addons.heroku.com/">150 add-on services</a>, from the Dashboard or CLI.</li>
-      </ul>
+<section>
+  <nav>
+  <form> 
+    
+  
+    <div class="media-body">
+      <div class="form-group">
+      <h3>Log in</h3>
+      <Font face="FreesiaUPC"Font size=5 size="18" color="black" >
+      <label for="UserName">&#9993 UserName:</label>
+      <input type="UserName" class="form-control" id="UserName" placeholder="Enter UserName" name="UserName" required>
     </div>
-    <div class="col-md-6">
-      <h3><span class="glyphicon glyphicon-link"></span> Next Steps</h3>
-      <ul>
-        <li>If you are following the <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started</a> guide, then please head back to the tutorial and follow the next steps!</li>
-        <li>If you deployed this app by deploying the Heroku Button, then in a command line shell, run:</li>
-        <ul>
-          <li><code>git clone https://github.com/heroku/node-js-getting-started.git</code> - this will create a local copy of the source code for the app</li>
-          <li><code>cd node-js-getting-started</code> - change directory into the local source code repository</li>
-          <li><code>heroku git:remote -a &lt;your-app-name></code> - associate the Heroku app with the repository</li>
-          <li>You'll now be set up to run the app locally, or <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#push-local-changes">deploy changes</a> to Heroku</li>
-        </ul>
-      </ul>
-      <h3><span class="glyphicon glyphicon-link"></span> Helpful Links</h3>
-      <ul>
-        <li><a href="https://www.heroku.com/home">Heroku</a></li>
-        <li><a href="https://devcenter.heroku.com/">Heroku Dev Center</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs">Getting Started on Heroku with Node.js</a></li>
-        <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
-      </ul>
+    <div class="form-group">
+      <label for="pwd">&#128477 Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
     </div>
-  </div> <!-- row -->
-   <div class="alert alert-info text-center" role="alert">
-    Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <Font face="FreesiaUPC"Font size=4 color="white" >
+    <input type="button" onclick="window.location.href='U2.html'" Font size=5 value="Login" class ="btn btn-primary">
+    </div>
+    </Font>
+  </form>
+  </nav>
+  <article>
+    <h6>&nbsp</h6>
+    <h3 class="ex1">&#128466 การยื่นคำร้องลงทะเบียนล่าช้า &#128395</h3>
+    <h6>&nbsp</h6>
+    <div class="media border p-2">
+    <img src="../avatar2.png" alt="Student" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+    <div class="media-body">
+      <h5 class="ex1">นักศึกษา</h5>
+      <p class="ex2">ใครบ้างที่สามารถยื่นคำร้องลงทะเบียนล่าช้าได้</p>
+      <div class="media p-3">
+        <img src="../avatar1.png" alt="Staff" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+        <div class="media-body">
+          <h5 class="ex1">เจ้าหน้าที่ </h5>
+          <p class="ex2">ผู้ที่สามารถยื่นคำร้องลงทะเบียนล่าช้าได้ต้องนักศึกษาของมหาวิทยาลัยธรรมศาสตร์ที่ไม่ได้จดทะเบียนเรียนในรอบแรก</p>
+        </div>
+      </div>  
+    </div>
   </div>
-</div>
 
+  <div class="media border p-2">
+    <img src="../avatar2.png" alt="Student" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+    <div class="media-body">
+      <h5 class="ex1">นักศึกษา</h5>
+      <p class="ex2">ในการยื่นคำร้องลงทะเบียนล่าช้ามีระยะเวลาที่สามารถยื่นคำร้องได้กี่วัน</p>
+      <div class="media p-3">
+        <img src="../avatar1.png" alt="Staff" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+        <div class="media-body">
+          <h5 class="ex1">เจ้าหน้าที่ </h5>
+          <p class="ex2">นักศึกษาสามารถยื่นคำร้องและดำเนินการตามขั้นตอนต่างๆต้องไม่เกิน 30 วัน นับจากวันเปิดภาคเรียน</p>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+  <div class="media border p-2">
+    <img src="../avatar2.png" alt="Student" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+    <div class="media-body">
+      <h5 class="ex1">นักศึกษา</h5>
+      <p class="ex2">มีค่าใช้จ่ายในการจดทะเบียนล่าช้าหรือไม่</p>
+      <div class="media p-3">
+        <img src="../avatar1.png" alt="Staff" class="mr-3 mt-3 rounded-circle" style="width:45px;">
+        <div class="media-body">
+          <h5 class="ex1">เจ้าหน้าที่ </h5>
+          <p class="ex2">นักศึกษาต้องเสียค่าปรับอัตราต่อวัน วันละ 45 บาท โดยเริ่มคิดค่าปรับตั้งแต่วันแรกของช่วงการจดทะเบียนเรียนล่าช้า (ไม่คิดค่าปรับวันหยุด) </p>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+  </article>
+</section>
+
+<footer>
+    <Font face="FreesiaUPC"Font size=4 color="white" >
+  <p><B>พบปัญหาการเข้าใช้หน้าเว็ป ติดต่อได้ที่: &#9743 089-999-9999 &#9993 cs264group3@dome.tu.ac.th</B></p>
+        </Font>
+</footer>
 
 </body>
 </html>
