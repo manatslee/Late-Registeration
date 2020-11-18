@@ -10,4 +10,4 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 var app = express();
-app.use( express.static( "public" ));
+app.use( express.static( "picture" ));
